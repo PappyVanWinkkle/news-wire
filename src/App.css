@@ -1,28 +1,39 @@
-.App {
-  text-align: center;
+/*
+* styles for the Landing page App.js
+*/
+
+.header-section {
+  background: url("./Images/news2.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 500px;
+}
+.header-inner {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  min-height: 500px;
+}
+.fa {
+  color: #00aff0;
+  background: #fff;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 30px;
+}
+.header-inner {
+  padding-top: 150px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.header-section h1 {
+  color: #ecf0f1;
+  font-family: "UnifrakturMaguntia", cursive;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.header-section p {
+  color: #ecf0f1;
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  line-height: 1.3em;
 }
