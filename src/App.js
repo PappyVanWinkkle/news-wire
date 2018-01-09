@@ -1,5 +1,12 @@
+/*
+* Main Landing Component of the News Application
+* First UI Component displayed to the user 
+*/
+
+
 import React, { Component } from "react";
 import "./App.css";
+import News from "./News";
 
 class App extends Component {
   render() {
@@ -43,6 +50,7 @@ class App extends Component {
           </div>
         </div>
       </header>
+    
     );
   }
 }
