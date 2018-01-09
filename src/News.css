@@ -1,0 +1,13 @@
+/*
+* Styles for the News Component of the Application
+*/
+.box {
+    max-height: 250px;
+    width: 200px;
+    border-radius: 5px;
+
+}
+
+.news-inner {
+    padding-top: 150px;
+}

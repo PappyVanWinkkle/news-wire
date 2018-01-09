@@ -3,9 +3,9 @@
 * First UI Component displayed to the user 
 */
 
-
 import React, { Component } from "react";
 import "./App.css";
+import { Link } from "react-router-dom";
 import News from "./News";
 
 class App extends Component {
@@ -50,7 +50,6 @@ class App extends Component {
           </div>
         </div>
       </header>
-    
     );
   }
 }
