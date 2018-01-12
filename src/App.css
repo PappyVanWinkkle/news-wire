@@ -6,7 +6,7 @@
   background: url("./Images/news2.jpeg");
   background-size: cover;
   background-attachment: fixed;
-  min-height: 1200px;
+  min-height: 960px;
 }
 .header-inner {
   background: rgba(0, 0, 0, 0.8);
@@ -14,7 +14,7 @@
   top: 0;
   left: 0;
   position: absolute;
-  min-height: 1200px;
+  min-height: 960px
 }
 .fa {
   color: #00aff0;
