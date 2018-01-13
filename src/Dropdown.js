@@ -28,23 +28,29 @@ class Dropdown extends React.Component {
 
   render() {
     return (
-       <div className="d-flex flex-row justify-content-center"> 
-      <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="text-center">
-        <DropdownToggle caret>More News</DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem header />
-          <Link to="/bbc">
-          <DropdownItem>BBC</DropdownItem>
-          </Link>
-          <Link to="/nbc">
-          <DropdownItem>NBC</DropdownItem>
-          </Link>
-          <Link to="/reuters">
-          <DropdownItem>Reuters</DropdownItem>
-          </Link>
-          <DropdownItem>Bloomberg</DropdownItem>
-        </DropdownMenu>
-      </ButtonDropdown>
+      <div className="d-flex flex-row justify-content-center">
+        <ButtonDropdown
+          isOpen={this.state.dropdownOpen}
+          toggle={this.toggle}
+          className="text-center"
+        >
+          <DropdownToggle caret>More News</DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem header />
+            <Link to="/bbc">
+              <DropdownItem>BBC</DropdownItem>
+            </Link>
+            <Link to="/nbc">
+              <DropdownItem>NBC</DropdownItem>
+            </Link>
+            <Link to="/reuters">
+              <DropdownItem>Reuters</DropdownItem>
+            </Link>
+            <Link to="/news24">
+              <DropdownItem>News24</DropdownItem>
+            </Link>
+          </DropdownMenu>
+        </ButtonDropdown>
       </div>
     );
   }

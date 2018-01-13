@@ -20,51 +20,49 @@ class News extends React.Component {
       articles: []
     };
   }
- 
-  componentWillMount () {
-    axios.get(`https://newsapi.org/v2/everything?sources=the-new-york-times&apiKey=263eeacd7c684c84b8f069349d66590e`)
-    .then(results => {
-      this.setState({
-        articles: results.data.articles
-      })
-    })
+
+  componentWillMount() {
+    axios
+      .get(
+        `https://newsapi.org/v2/everything?sources=the-new-york-times&apiKey=263eeacd7c684c84b8f069349d66590e`
+      )
+      .then(results => {
+        this.setState({
+          articles: results.data.articles
+        });
+      });
   }
-    
 
   renderNews(article, index) {
     const publishedAt = moment(article.publishedAt).calendar();
     return (
       <div className="news-section bg-light" key={index}>
-         <div className="container d-flex flex-row justify-content-center">
-           <div className="row">
-             <div className="articles col-sm-10 text-center">
-                <h5 className="news-title">{article.title}</h5>
-                <p className="news-text">{article.description}</p>
-                <p>{publishedAt}</p>
-                <div>
-                  <a href={`${article.url}`} className="badge badge-primary">
-                   ReadMore
-                   </a>
-                </div>
-             </div>
-             <div className="articles col-sm-2">
+        <div className="container d-flex flex-row justify-content-center">
+          <div className="row">
+            <div className="articles col-sm-10 text-center">
+              <h5 className="news-title">{article.title}</h5>
+              <p className="news-text">{article.description}</p>
+              <p>{publishedAt}</p>
+              <div>
+                <a href={`${article.url}`} className="badge badge-primary">
+                  ReadMore
+                </a>
+              </div>
+            </div>
+            <div className="articles col-sm-2">
               <Newslink />
-           </div>
-           
-           </div>
-           
-         </div>
-        
+            </div>
+          </div>
+        </div>
       </div>
-      
     );
   }
   render() {
     const articles = this.state.articles.map(this.renderNews);
     return (
-      <div  >
+      <div>
         <Nav />
-        
+
         {articles}
       </div>
     );

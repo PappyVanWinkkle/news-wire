@@ -25,7 +25,6 @@ class AP extends React.Component {
         this.setState({
           newsArticles: results.data.articles
         });
-        
       });
   }
 
@@ -34,29 +33,29 @@ class AP extends React.Component {
 
     return (
       <div className="news-section bg-light " key={index}>
-       <div className="container d-flex flex-row jusify-content-center">
-        <div className="articles col-sm-11 text-center">
-        <h5 className="news-title">{article.title}</h5>
-        <p className="news-text">{article.description}</p>
-        <p>{publishedAt}</p>
-        <div>
-          <a href={`${article.url}`} className="badge badge-primary">
-            Read More
-          </a>
-        </div>
-        </div>
+        <div className="container d-flex flex-row jusify-content-center">
+          <div className="articles col-sm-11 text-center">
+            <h5 className="news-title">{article.title}</h5>
+            <p className="news-text">{article.description}</p>
+            <p>{publishedAt}</p>
+            <div>
+              <a href={`${article.url}`} className="badge badge-primary">
+                Read More
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
   render() {
     const newsArticles = this.state.newsArticles.map(this.renderNewsArticles);
-    return(
+    return (
       <div>
-       <Nav />
-      {newsArticles}
+        <Nav />
+        {newsArticles}
       </div>
-    ) 
+    );
   }
 }
 

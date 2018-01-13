@@ -16,7 +16,7 @@ const Navbar = () => {
         <nav className="navbar fixed-top navbar-light bg-primary">
           <div>
             <div>
-              <a className="navbar-brand" href="">
+              <a className="navbar-brand" href={``}>
                 NewsWire
               </a>
             </div>

@@ -3,7 +3,6 @@
 */
 import React from "react";
 import axios from "axios";
-import styled from "styled-components";
 import moment from "moment";
 import Nav from "./Navbar";
 
@@ -33,7 +32,6 @@ class Bbc extends React.Component {
       <div className="news-section bg-light" key={index}>
         <div className="container d-flex flex-row justify-content-center">
           <div className="row">
-          
             <div className="articles col-sm-12 text-center">
               <h5 className="news-title">{article.title}</h5>
               <p className="news-text">{article.description}</p>
@@ -44,10 +42,8 @@ class Bbc extends React.Component {
                 </a>
               </div>
             </div>
-
           </div>
         </div>
-    
       </div>
     );
   }

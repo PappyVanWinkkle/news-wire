@@ -8,7 +8,6 @@ import moment from "moment";
 import "./nbc.css";
 import Nav from "./Navbar";
 
-
 class Nbc extends React.Component {
   // setting the state
   constructor(props) {
@@ -35,7 +34,6 @@ class Nbc extends React.Component {
       <div className="news-section bg-light" key={key}>
         <div className="container d-flex flex-row justify-content-center">
           <div className="row">
-          
             <div className="article col-sm-12 text-center">
               <h5 className="news-title">{article.title}</h5>
               <p className="news-text">{article.description}</p>
@@ -46,7 +44,6 @@ class Nbc extends React.Component {
                 </a>
               </div>
             </div>
-           
           </div>
         </div>
       </div>
