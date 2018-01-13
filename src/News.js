@@ -9,6 +9,7 @@ import React from "react";
 import "./News.css";
 import axios from "axios";
 import moment from "moment";
+import AP from "./Associated";
 import Nav from "./Navbar";
 
 class News extends React.Component {
@@ -19,12 +20,11 @@ class News extends React.Component {
       articles: []
     };
   }
-
+ 
   componentWillMount() {
     axios
       .get(
-        `https://newsapi.org/v2/top-headlines?sources=reuters&apiKey=263eeacd7c684c84b8f069349d66590e
-        `
+        `https://newsapi.org/v2/everything?sources=new-york-magazine&apiKey=263eeacd7c684c84b8f069349d66590e`
       )
       .then(results => {
         this.setState({
@@ -37,31 +37,21 @@ class News extends React.Component {
     const publishedAt = moment(article.publishedAt).calendar();
     return (
       <div className="news-section bg-light text-center" key={index}>
-        <div className="news-inner">
-          <div className="container-fluid">
-            <div className="row ">
-              {/*End of the images section of the News app*/}
-              <div className="col-lg-8 d-flex flex-row justify-content-center">
-               <div className="inner-card">
-                <div className="card text-center" >
-                  <div className="card-body" >
-                    <h5 className="card-title">{article.title}</h5>
-                    <p className="card-text">
-                      {article.description}
-                    </p>
-                    <p>{publishedAt}</p>
-                    <a href={`${article.url}`} className="btn btn-outline-primary ">
-                      Read-More
-                    </a>
-                  </div>
-                  </div>
+         <div className="container">
+           <div className="row">
+             <div className="articles col-sm-6">
+                <h5 className="news-title">{article.title}</h5>
+                <p className="news-text">{article.description}</p>
+                <p>{publishedAt}</p>
+                <div>
+                  <a href={`${article.url}`} className="btn btn-outline-primary">Read More</a>
                 </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
+             </div>
+           </div>
+         </div>
+        
       </div>
+      
     );
   }
   render() {
