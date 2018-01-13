@@ -6,7 +6,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Link } from "react-router-dom";
-import News from "./News";
+
 
 class App extends Component {
   render() {
@@ -41,11 +41,15 @@ class App extends Component {
                 </div>
               </div>{" "}
               {/* End of the col-lg-8 class section */}
+            
               <div className="col-lg-4">
-                <button className="btn btn-primary btn-lg btn-block">
-                  Get News Now
-                </button>
+              <Link to="/news">
+                <div className="anchor-link">
+                  <button className="btn btn-primary btn-lg btn-block">Get News Now</button>
+                </div>
+                </Link>  
               </div>
+              
             </div>
           </div>
         </div>

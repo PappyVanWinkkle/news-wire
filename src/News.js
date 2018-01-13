@@ -37,7 +37,7 @@ class News extends React.Component {
       <div className="news-section bg-light" key={index}>
          <div className="container d-flex flex-row justify-content-center">
            <div className="row">
-             <div className="articles col-sm-8">
+             <div className="articles col-sm-10 text-center">
                 <h5 className="news-title">{article.title}</h5>
                 <p className="news-text">{article.description}</p>
                 <p>{publishedAt}</p>
@@ -47,7 +47,7 @@ class News extends React.Component {
                    </a>
                 </div>
              </div>
-             <div className="articles col-sm-4">
+             <div className="articles col-sm-2">
               <Newslink />
            </div>
            

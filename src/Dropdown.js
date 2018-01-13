@@ -3,7 +3,12 @@
 */
 import React from "react";
 import { Link } from "react-router-dom";
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import {
+  ButtonDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from "reactstrap";
 
 class Dropdown extends React.Component {
   constructor(props) {
@@ -23,22 +28,24 @@ class Dropdown extends React.Component {
 
   render() {
     return (
-      <ButtonDropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret>
-          More News
-        </DropdownToggle>
+       <div className="d-flex flex-row justify-content-center"> 
+      <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="text-center">
+        <DropdownToggle caret>More News</DropdownToggle>
         <DropdownMenu>
-          <DropdownItem header></DropdownItem>
-          <DropdownItem >BBC</DropdownItem>
+          <DropdownItem header />
+          <Link to="/bbc">
+          <DropdownItem>BBC</DropdownItem>
+          </Link>
+          <Link to="/nbc">
           <DropdownItem>NBC</DropdownItem>
-          <DropdownItem>CNN</DropdownItem>
-          <DropdownItem>News24</DropdownItem>
-          <DropdownItem divider />
+          </Link>
+          <Link to="/reuters">
           <DropdownItem>Reuters</DropdownItem>
+          </Link>
           <DropdownItem>Bloomberg</DropdownItem>
-          <DropdownItem>Associated Press</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
+      </div>
     );
   }
 }

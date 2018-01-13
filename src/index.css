@@ -6,3 +6,7 @@ body {
 .navbar-brand {
   color: white;
 }
+
+a:hover{
+  text-decoration: none;
+}

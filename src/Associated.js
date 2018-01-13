@@ -3,6 +3,7 @@
 */
 import React from "react";
 import axios from "axios";
+import Nav from "./Navbar";
 import moment from "moment";
 import "./AP.css";
 
@@ -24,7 +25,7 @@ class AP extends React.Component {
         this.setState({
           newsArticles: results.data.articles
         });
-        //console.log(this.state.newsArticles)
+        
       });
   }
 
@@ -32,7 +33,9 @@ class AP extends React.Component {
     const publishedAt = moment(article.publishedAt).calendar();
 
     return (
-      <div key={index}>
+      <div className="news-section bg-light " key={index}>
+       <div className="container d-flex flex-row jusify-content-center">
+        <div className="articles col-sm-11 text-center">
         <h5 className="news-title">{article.title}</h5>
         <p className="news-text">{article.description}</p>
         <p>{publishedAt}</p>
@@ -41,12 +44,19 @@ class AP extends React.Component {
             Read More
           </a>
         </div>
+        </div>
+        </div>
       </div>
     );
   }
   render() {
     const newsArticles = this.state.newsArticles.map(this.renderNewsArticles);
-    return <div>{newsArticles}</div>;
+    return(
+      <div>
+       <Nav />
+      {newsArticles}
+      </div>
+    ) 
   }
 }
 
