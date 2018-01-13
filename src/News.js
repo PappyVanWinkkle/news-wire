@@ -8,8 +8,8 @@
 import React from "react";
 import "./News.css";
 import axios from "axios";
+import Newslink from "./Dropdown";
 import moment from "moment";
-import AP from "./Associated";
 import Nav from "./Navbar";
 
 class News extends React.Component {
@@ -21,33 +21,38 @@ class News extends React.Component {
     };
   }
  
-  componentWillMount() {
-    axios
-      .get(
-        `https://newsapi.org/v2/everything?sources=new-york-magazine&apiKey=263eeacd7c684c84b8f069349d66590e`
-      )
-      .then(results => {
-        this.setState({
-          articles: results.data.articles
-        });
-      });
+  componentWillMount () {
+    axios.get(`https://newsapi.org/v2/everything?sources=the-new-york-times&apiKey=263eeacd7c684c84b8f069349d66590e`)
+    .then(results => {
+      this.setState({
+        articles: results.data.articles
+      })
+    })
   }
+    
 
   renderNews(article, index) {
     const publishedAt = moment(article.publishedAt).calendar();
     return (
-      <div className="news-section bg-light text-center" key={index}>
-         <div className="container">
+      <div className="news-section bg-light" key={index}>
+         <div className="container d-flex flex-row justify-content-center">
            <div className="row">
-             <div className="articles col-sm-6">
+             <div className="articles col-sm-8">
                 <h5 className="news-title">{article.title}</h5>
                 <p className="news-text">{article.description}</p>
                 <p>{publishedAt}</p>
                 <div>
-                  <a href={`${article.url}`} className="btn btn-outline-primary">Read More</a>
+                  <a href={`${article.url}`} className="badge badge-primary">
+                   ReadMore
+                   </a>
                 </div>
              </div>
+             <div className="articles col-sm-4">
+              <Newslink />
            </div>
+           
+           </div>
+           
          </div>
         
       </div>
@@ -57,8 +62,9 @@ class News extends React.Component {
   render() {
     const articles = this.state.articles.map(this.renderNews);
     return (
-      <div className="" >
+      <div  >
         <Nav />
+        
         {articles}
       </div>
     );

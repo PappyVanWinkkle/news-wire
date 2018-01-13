@@ -13,15 +13,15 @@ const Navbar = () => {
   return (
     <Wrapper>
       <Link to="/">
-      <nav className="navbar fixed-top navbar-light bg-primary">
-        <div>
-          <a className="navbar-brand" href="">
-          
-            NewsWire
-          
-          </a>
-        </div>
-      </nav>
+        <nav className="navbar fixed-top navbar-light bg-primary">
+          <div>
+            <div>
+              <a className="navbar-brand" href="">
+                NewsWire
+              </a>
+            </div>
+          </div>
+        </nav>
       </Link>
     </Wrapper>
   );
