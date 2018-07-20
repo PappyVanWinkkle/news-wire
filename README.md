@@ -22,5 +22,5 @@ Then install the dependencies using yarn or npm install
 npm start or yarn start should start the dev server and you can view the app and play with it
 
 Please click on the link below to view the application 
-[Newswires](https://newswires.herokuapp.com/)
+[Newswires](https://d2bakz9vwq7lue.cloudfront.net/)
 
