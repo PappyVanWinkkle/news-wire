@@ -12,7 +12,7 @@ const Errors = () => {
 			<Nav />
 			<div className="row">
 				<div className="col-sm-12">
-					<div class="jumbotron jumbotron-fluid" style={{ height: '100vh', width: '100vw' }}>
+					<div className="jumbotron jumbotron-fluid" style={{ height: '100vh', width: '100vw' }}>
 						<div className="container">
 							<h1 className="display-4" style={{ fontWeight: '800' }}>
 								404 Page Not Found
